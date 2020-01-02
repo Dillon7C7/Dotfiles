@@ -1,70 +1,54 @@
-"hard wrap
-"set textwidth=72
+""" BASIC SETUP:
 
-" soft wrap
-set wrap 
+" turn off vi-compatible mode and make vim more useful
+set nocompatible
 
-" numbered rows
-set number 
+" enable syntax highlighting
+syntax enable
 
-"""""""""""""""""""""""""""""""""""""""""" INDENTING OPTIONS 
+" enable filetype detection and loading of existing plugins for said files
+filetype plugin on
 
-" new lines inherit the indentation of previous lines
-set autoindent
+" precede each line with its line number
+set number
 
-" sets number of spaces to 4 inserted when using autoindent
-set shiftwidth=4
+""" FINDNG FILES:
 
-" insert 4 spaces as a tab, as opposed to the default 8
-set tabstop=4
+" search relative to the dir of the current file or current dir, recursively
+set path=.,,**
 
-" tabs 'feel' like 4 spaces, regardless of what tabstop is set to
-set softtabstop=4
+" display all matching files when we tab complete
+set wildmenu
 
-" numbered row column has a length of 1
-set numberwidth=1 
+""" TAG JUMPING:
 
-" insert blanks according to 'shiftwidth' 
-set smarttab
+" create the `tags` file (requires ctags binary)
+" - use ^] to jump to tag under cursor
+" - use g^] for ambiguous tags
+" - use ^t to jump back up the tag stack
+command! MakeTags !ctags -R .
 
-"""""""""""""""""""""""""""""""""""""""""" END OF INDENTING OPTIONS 
-"""""""""""""""""""""""""""""""""""""""""" SEARCH OPTIONS
+""" AUTOCOMPLETE: (:help ins-completion)
 
-" enable search highlighting
-set hlsearch
+" - ^x^n for JUST this file
+" - ^x^f for filenames (works with our set path)
+" - ^x^] for tags only
+" - ^n for anything specified by the 'complete' option
+"
+" - use ^n and ^p to go back and forth in the suggestion list
 
-" ignore case when searching
-set ignorecase
+""" FILE BROWSING: (netrw over NERDTree)
 
-" incremental search that shows partial matches
-set incsearch
+let g:netrw_banner=0         " disable banner
+let g:netrw_liststyle=3      " tree view, `i` to cycle
+let g:netrw_browse_split=4   " open files in prev window (use `o` or `v` for splits, `t` for tabs)
+let g:netrw_winsize=75       " when opening in splits, use 75% of the window
+let g:netrw_alto=1           " use below splitting when opening files
+let g:netrw_altv=1           " use right splitting when opening files
+""let g:netrw_list_hide=netrw_gitignore#Hide() "??? TODO
 
-" switch to case-sensitive search when search query contains an uppercase letter
-set smartcase
 
-"""""""""""""""""""""""""""""""""""""""""" END OF SEARCH OPTIONS
-
-" increase the undo limit
-set history=1000
-
-" set a leader
-:let mapleader = "-"
-
-" press Ctrl+u to uppercase a word in normal and visual modes
-" noremap makes mappings non-recursive
-inoremap <leader><c-u> <esc>viwU
-nnoremap <leader><c-u> viwU
-
-augroup gitsetup
-  autocmd!
-  
-  " these commands apply to fields with the .gitcommit extension
-  autocmd BufNewFile,BufRead *.gitcommit setlocal filetype=gitcommit
-
-  " only set this command for git commits
-  " the first line in a file will hard wrap at 50 chars, else 72
-  autocmd FileType gitcommit
-	\ hi def link gitcommitOverflow Error
-	\| autocmd CursorMoved,CursorMovedI *
-	\ let &textwidth= line(".") == 1 ? 50 : 72
+augroup ProjectBrowse
+	autocmd!
+	autocmd VimEnter * :Vexplore
 augroup END
