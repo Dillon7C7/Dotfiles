@@ -46,9 +46,3 @@ let g:netrw_winsize=75       " when opening in splits, use 75% of the window
 let g:netrw_alto=1           " use below splitting when opening files
 let g:netrw_altv=1           " use right splitting when opening files
 ""let g:netrw_list_hide=netrw_gitignore#Hide() "??? TODO
-
-
-augroup ProjectBrowse
-	autocmd!
-	autocmd VimEnter * :Vexplore
-augroup END
