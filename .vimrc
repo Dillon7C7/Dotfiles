@@ -12,6 +12,19 @@ filetype plugin on
 " precede each line with its line number
 set number
 
+""" SHORTCUTS/REMAPS:
+
+" set map leader to space
+let mapleader=" "
+
+"" Normal Mode:
+
+" <leader> O to 'insert newline before current line'
+nnoremap <leader>O O<Esc>
+
+" <leader> o to 'insert newline after current line'
+nnoremap <leader>o o<Esc>
+
 """ FINDNG FILES:
 
 " search relative to the dir of the current file or current dir, recursively
