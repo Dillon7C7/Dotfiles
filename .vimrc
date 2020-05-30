@@ -12,6 +12,10 @@ filetype plugin on
 " precede each line with its line number
 set number
 
+" wait 200 milliseconds for successive Vim keycodes
+set timeoutlen=200
+
+
 """ SHORTCUTS/REMAPS:
 
 " set map leader to space
@@ -24,6 +28,21 @@ nnoremap <leader>O O<Esc>
 
 " <leader> o to 'insert newline after current line'
 nnoremap <leader>o o<Esc>
+
+" <leader> i to 'insert single character in Normal Mode'
+nnoremap <leader>i i_<Esc>r
+
+" <leader> w to 'write current file (:w)
+nnoremap <leader>w :w<cr>
+
+" <leader> q to 'exit current file, and save if changes have been made (:x)
+nnoremap <leader>q :x<cr>
+
+"" Insert Mode:
+
+" map jk to esc
+inoremap jk <Esc>
+
 
 """ FINDNG FILES:
 
