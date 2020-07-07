@@ -32,11 +32,14 @@ nnoremap <leader>o o<Esc>
 " <leader> i to 'insert single character in Normal Mode'
 nnoremap <leader>i i_<Esc>r
 
-" <leader> w to 'write current file (:w)
+" <leader> w to 'write current file (:w)'
 nnoremap <leader>w :w<cr>
 
-" <leader> q to 'exit current file, and save if changes have been made (:x)
+" <leader> q to 'exit current file, and save if changes have been made (:x)'
 nnoremap <leader>q :x<cr>
+
+" <leader> n to 'remove highlighting of matched search patterns'
+nnoremap <leader>n :nohls<cr>
 
 "" Insert Mode:
 
