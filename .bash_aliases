@@ -3,4 +3,5 @@ alias la='ls -A'
 alias l='ls -CF'
 alias lm='ls -lrt *mov *mpg 2>/dev/null'
 
-alias dotgit='/usr/bin/git --git-dir=$HOME/Dotfiles/ --work-tree=$HOME'
+alias dirs='dirs -v'
+alias dotgit='/usr/bin/git --git-dir=$HOME/dotfiles.git/ --work-tree=$HOME'
