@@ -44,7 +44,15 @@ $ dotgit push origin master
 
 ### Automate this process
 I have written a (POSIX-compliant) script that automates the **Installation** steps.
-TODO: Add script.
+
+#### Usage:
+```
+$ curl -LO https://raw.githubusercontent.com/Dillon7C7/Dotfiles-bootstrap/master/dotfiles-install.sh
+$ chmod u+x dotfiles-install.sh
+$ ./dotfiles-install.sh
+```
+
+The script will delete itself upon successful completion. **Make sure git is installed prior to using!**
 
 ### Machines with different requirements or restrictions
 
