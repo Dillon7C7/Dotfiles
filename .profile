@@ -3,10 +3,15 @@
 # Get the aliases and functions
 [ -f ~/.bashrc ] && . ~/.bashrc
 
+# Default programs:
 export EDITOR="vim"
 export TERMINAL="gnome-terminal"
 
 # User specific environment and startup programs
+
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_DATA_HOME="$HOME/.local/share"
 
 # BAD/TEMP PLACE FOR THESE...?
 export XMODIFIERS=@im=ibus
