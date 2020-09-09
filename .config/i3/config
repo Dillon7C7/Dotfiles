@@ -17,10 +17,8 @@ exec_always ~/test.sh
 # screen timeout of 10 minutes
 exec xset dpms 0 0 600
 
-# change keyboard layout (TEST) WIP
-##bindsym $mod+n exec setxkbmap -layout us
-##bindsym $mod+m exec setxkbmap -layout cn
-##setxkbmap -option 'grp
+# start IBus, used for switching languages
+exec --no-startup-id ibus-daemon -drx
 
 # wallpaper
 exec --no-startup-id feh --bg-scale --randomize /home/dillon/Pictures/Wallpapers/2560x1440/*
@@ -58,6 +56,9 @@ bindsym $mod+Return exec i3-sensible-terminal
 
 # start firefox
 bindsym $mod+Shift+f exec firefox --private-window
+
+# switch IME (Input Method Framework)
+bindsym $mod+space exec --no-startup-id $HOME/.config/i3/switch_ime.sh
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -119,7 +120,7 @@ for_window [class="hl_linux"] resize set 2160 1620
 bindsym $mod+a workspace back_and_forth
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+bindsym $mod+$mod1+space focus mode_toggle
 
 # focus the parent container
 bindsym $mod+x focus parent
