@@ -1,0 +1,48 @@
+! clear all entries in the modifier map for Lock and Mod4
+clear Lock
+clear Mod4
+
+! remove Alt_R from Mod1 modifier map
+remove Mod1 = Alt_R
+
+! remove Unused Mode_switch from Mod5
+remove Mod5 = Mode_switch
+
+! swap Super_L and Caps_Lock, and add Menu key (keycode 133) to Caps_Lock
+keycode 133 = Caps_Lock
+keycode 135 = Caps_Lock
+keycode 66 = Super_L
+
+add Lock = Caps_Lock Menu
+add Mod4 =  Super_L
+
+!!!!!! 60% KEYBOARD STUFF BELOW!
+
+!!! Assign Alt_R (keycode 108) to unused Mode_switch keysym
+!!keycode 108 = Mode_switch
+!!
+!!! Assign Mode_switch + arrow keys to hjkl 
+!!keysym h = h H Left
+!!keysym j = j J Down
+!!keysym k = k K Up
+!!keysym l = l L Right
+!!
+!!! Assign Mode_switch + {num keys, - +} to F1-12
+!!keysym 1 = 1 exclam F1
+!!keysym 2 = 2 at F2
+!!keysym 3 = 3 numbersign F3
+!!keysym 4 = 4 dollar F4
+!!keysym 5 = 5 percent F5
+!!keysym 6 = 6 asciicircum F6
+!!keysym 7 = 7 ampersand F7
+!!keysym 8 = 8 asterisk F8
+!!keysym 9 = 9 parenleft F9
+!!keysym 0 = 0 parenright F10
+!!keysym minus = minus underscore F11
+!!keysym equal = equal plus F12
+!!
+!!! Disable arrow keys
+!!keycode 113 = 0x0000
+!!keycode 116 = 0x0000
+!!keycode 111 = 0x0000
+!!keycode 114 = 0x0000
