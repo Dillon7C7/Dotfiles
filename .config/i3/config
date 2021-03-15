@@ -48,6 +48,9 @@ bindsym --release $mod+Print exec scrot '%Y-%m-%d_%H:%M:%S_$wx$h.png' -e 'mv $f 
 # interactively take screenshot with Print Screen, YYYY-MM-DD_HH:MM:SS_WxH.png, paste to clipboard
 bindsym --release $mod+Shift+Print exec scrot --select '%Y-%m-%d_%H:%M:%S_$wx$h.png' -e 'xclip -selection clipboard -t image/png -i < $f && mv $f /home/dillon/Pictures/Screenshots/' 
 
+# interactively take screenshot with Print Screen, and remove it after copying to clipboard
+bindsym --release $mod+z exec scrot --select '%Y-%m-%d_%H:%M:%S_$wx$h.png' -e 'xclip -selection clipboard -t image/png -i < $f && rm -f $f'
+
 # lock screen
 bindsym $mod+$mod1+e exec i3lock
 
