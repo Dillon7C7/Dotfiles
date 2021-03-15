@@ -58,6 +58,9 @@ bindsym $mod+$mod1+e exec i3lock
 bindsym $mod+Return exec i3-sensible-terminal
 
 # start firefox
+bindsym $mod+$mod1+f exec firefox
+
+# start firefox in a private window
 bindsym $mod+Shift+f exec firefox --private-window
 
 # switch IME (Input Method Framework)
