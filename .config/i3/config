@@ -12,7 +12,7 @@
 set $mod Mod4
 set $mod1 Mod1
 
-exec_always ~/test.sh
+#exec_always ~/test.sh
 
 # screen timeout of 10 minutes
 exec xset dpms 0 0 600
@@ -142,10 +142,10 @@ set $ws3 "3"
 set $ws4 "4"
 set $ws5 "5"
 set $ws6 "6"
-set $ws7 "7"
+set $ws7 "7: Music 🎵"
 set $ws8 "8"
-set $ws9 "9: Mail "
-set $ws10 "10: Social "
+set $ws9 "9: Mail 📩"
+set $ws10 "10: Social 💬"
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
