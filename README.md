@@ -26,7 +26,7 @@ This allows you to update your dotfiles from anywhere on your filesystem.
 dotgit status
 dotgit add .zprofile
 dotgit commit -m "Add zsh login shell config, .zprofile"
-dotgit push origin master
+dotgit push origin main
 ```
 
 ## Caveats
@@ -47,7 +47,7 @@ I have written a (POSIX-compliant) script that automates the **Installation** st
 
 #### Usage:
 ```
-curl -LO https://raw.githubusercontent.com/Dillon7C7/Dotfiles-bootstrap/master/dotfiles-install
+curl -LO https://raw.githubusercontent.com/Dillon7C7/Dotfiles-bootstrap/main/dotfiles-install
 . dotfiles-install
 ```
 
@@ -67,7 +67,7 @@ dotgit add $HOME/.config/i3status/config
 dotgit commit -m "Add i3 config for work development machine"
 dotgit push origin work_dev_box
 ```
-Right now, the master branch holds my most typical setup, which works for most of the machines I use.
+Right now, the main branch holds my most typical setup, which works for most of the machines I use.
 
 ## Additional Information
 
