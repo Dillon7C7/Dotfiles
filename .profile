@@ -23,6 +23,6 @@ export QT_IM_MODULE=ibus
 #+ and open an X11 window to read the passphrase
 export SSH_ASKPASS=/usr/libexec/openssh/ssh-askpass
 
-if command -v keychain 2>&1 >/dev/null; then
+if command -v keychain >/dev/null 2>&1; then
 	eval "$(keychain --quiet --eval id_rsa)"
 fi
