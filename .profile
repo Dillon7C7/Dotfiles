@@ -1,7 +1,10 @@
 # .bash_profile
 
-# Get the aliases and functions
-[ -f ~/.bashrc ] && . ~/.bashrc
+# Get bash aliases and functions
+[ -f "$HOME/.bashrc" ] && . "$HOME/.bashrc"
+
+# set PATH so it includes user's private bin if it exists
+[ -d "$HOME/.local/bin" ] && PATH="$HOME/.local/bin:$PATH"
 
 # Default programs:
 export EDITOR="vim"
