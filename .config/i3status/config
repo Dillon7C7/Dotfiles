@@ -1,15 +1,14 @@
-# i3status configuration file.
-# see "man i3status" for documentation.
-
-# It is important that this file is edited as UTF-8.
-# The following line should contain a sharp s:
-# ß
-# If the above line is not correctly displayed, fix your editor first!
-
 general {
         colors = true
+        color_good = "#00FF00"
+        color_bad = "#FF0000"
+        color_degraded = "#FFFF00"
+
+        output_format = "i3bar"
+        separator = ""
         interval = 5
 }
+
 
 order += "disk /"
 order += "disk /home/"
@@ -19,10 +18,39 @@ order += "wireless _first_"
 #order += "battery all"
 ##order += "CPU-Temperature"
 order += "load"
+order += "memory"
 order += "tztime local"
+
+
+disk "/" {
+	# IEC prefixes (MiB, GiB) multiples of 1024
+	prefix_type = "binary"
+
+        #format = "Size: %total Used: %free, Avail: %avail"
+        #format = "%percentage_avail"
+       	format = "/ %percentage_used"
+
+	low_threshold = "20"
+	threshold_type = "percentage_avail"
+	format_below_threshold = "/ ALMOST FULL: %avail/%total"
+}
+
+disk "/home/" {
+	# IEC prefixes (MiB, GiB) multiples of 1024
+	prefix_type = "binary"
+
+	#format = "/home %avail"
+        #format = "Size: %total Used: %free, Avail: %avail"
+       	format = "/home %percentage_used"
+
+	low_threshold = "20"
+	threshold_type = "percentage_avail"
+	format_below_threshold = "/home ALMOST FULL: %avail /home %total"
+}
 
 wireless _first_ {
         format_up = "%quality at %essid | %ip"
+        #format_up = "%essid %ip"
         format_down = "down"
 }
 
@@ -36,42 +64,20 @@ battery all {
         format = "%status %percentage %remaining"
 }
 
-tztime local {
-        format = "%Y-%m-%d %H:%M:%S"
-}
-
 #CPU-Temperature {
 #		order = "cpu_temperature 0"
 #		format = "T: %degrees C"
 #}
 
 load {
-        format = "%1min"
+        format = "%1min %5min %15min"
+        max_threshold = "16"
 }
 
-disk "/" {
-		# IEC prefixes (MiB, GiB) multiples of 1024
-		prefix_type = "binary"
-		
-		#format = "/ %avail"
-        	format = "/ %percentage_used"
-        #format = "Size: %total Used: %free, Avail: %avail"
-        #format = "%percentage_avail"
-
-		low_threshold = "25"
-		threshold_type = "gbytes_avail"
-		format_below_threshold = "/ ALMOST FULL: %avail / %total"
+memory {
+        format = "%used/%available"
 }
 
-disk "/home/" {
-		# IEC prefixes (MiB, GiB) multiples of 1024
-		prefix_type = "binary"
-		
-		#format = "/home %avail"
-        #format = "Size: %total Used: %free, Avail: %avail"
-        	format = "/home %percentage_used"
-
-		low_threshold = "35"
-		threshold_type = "gbytes_avail"
-		format_below_threshold = "/home ALMOST FULL: %avail /home %total"
+tztime local {
+        format = "%Y-%m-%d %H:%M:%S"
 }
