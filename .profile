@@ -4,11 +4,16 @@
 [ -f "$HOME/.bashrc" ] && . "$HOME/.bashrc"
 
 # set PATH so it includes user's private bin if it exists
-[ -d "$HOME/.local/bin" ] && PATH="$HOME/.local/bin:$PATH"
+if [ -d "$HOME/.local/bin" ]; then
+	case ":$PATH:" in
+		*":$HOME/.local/bin:"*) : ;;
+		*) PATH="$HOME/.local/bin:$PATH" ;;
+	esac
+fi
 
 # Default programs:
 export EDITOR="vim"
-export TERMINAL="gnome-terminal"
+export TERMINAL="alacritty"
 
 # User specific environment and startup programs
 
