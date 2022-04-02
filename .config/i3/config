@@ -208,15 +208,15 @@ bindsym $mod+Shift+c reload
 bindsym $mod+$mod_alt+c restart
 
 # Increase the volume of the default audio output device
-bindsym $mod+comma  exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym $mod+m      exec pactl set-sink-volume @DEFAULT_SINK@ +5%
 # Decrease the volume of the default audio output device
-bindsym $mod+period exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym $mod+comma  exec pactl set-sink-volume @DEFAULT_SINK@ -5%
 # Mute or unmute the default audio output device
-bindsym $mod+slash  exec pactl set-sink-mute   @DEFAULT_SINK@ toggle
+bindsym $mod+period exec pactl set-sink-mute   @DEFAULT_SINK@ toggle
 
 ## TEMP FOR BNET ##
-bindsym $mod+m exec "sudo systemctl stop systemd-resolved"
-bindsym $mod+Shift+m exec "sudo systemctl start systemd-resolved"
+bindsym $mod+slash       exec "sudo systemctl stop systemd-resolved"
+bindsym $mod+Shift+slash exec "sudo systemctl start systemd-resolved"
 ## TEMP FOR BNET ##
 
 # Exit i3 (logs you out of your X session)
