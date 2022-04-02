@@ -19,6 +19,7 @@ order += "wireless _first_"
 #order += "battery all"
 ##order += "CPU-Temperature"
 order += "memory"
+order += "volume master"
 order += "tztime local"
 
 
@@ -76,6 +77,12 @@ load {
 
 memory {
         format = "%used/%total"
+}
+
+volume master {
+	format = "🎵: %volume"
+	format_muted = "🎵: (muted) %volume"
+	device = "default"
 }
 
 tztime local {

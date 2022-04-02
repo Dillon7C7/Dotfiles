@@ -207,6 +207,13 @@ bindsym $mod+Shift+c reload
 # Restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+$mod_alt+c restart
 
+# Increase the volume of the default audio output device
+bindsym $mod+comma  exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+# Decrease the volume of the default audio output device
+bindsym $mod+period exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+# Mute or unmute the default audio output device
+bindsym $mod+slash  exec pactl set-sink-mute   @DEFAULT_SINK@ toggle
+
 ## TEMP FOR BNET ##
 bindsym $mod+m exec "sudo systemctl stop systemd-resolved"
 bindsym $mod+Shift+m exec "sudo systemctl start systemd-resolved"
