@@ -21,9 +21,9 @@
 
 !/.gitignore
 !/.profile
-!/.screen_layout
-!/.screenrc
-!/.tmux.conf
+!/.config/screen/screen_layout
+!/.config/screen/screenrc
+!/.config/tmux/tmux.conf
 
 !/.vim/
 /.vim/*

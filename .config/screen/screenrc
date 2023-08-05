@@ -3,5 +3,5 @@ bind k focus up
 bind l focus right
 bind h focus left
 
-source .screen_layout
+source screen_layout
 layout save def
