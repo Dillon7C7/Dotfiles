@@ -22,6 +22,7 @@ export XDG_CACHE_HOME="${HOME}/.cache"
 export XDG_DATA_HOME="${HOME}/.local/share"
 
 export SCREENRC="${XDG_CONFIG_HOME}/screen/screenrc"
+export PASSWORD_STORE_DIR="${XDG_CONFIG_HOME}/pass/password-store"
 
 # BAD/TEMP PLACE FOR THESE...?
 export XMODIFIERS="@im=ibus"
