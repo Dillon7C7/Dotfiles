@@ -6,7 +6,7 @@ clear Mod4
 remove Mod1 = Alt_R
 
 ! remove Unused Mode_switch from Mod5
-remove Mod5 = Mode_switch
+!remove Mod5 = Mode_switch
 
 ! swap Super_L and Caps_Lock, and add Menu key (keycode 133) to Caps_Lock
 keycode 133 = Caps_Lock

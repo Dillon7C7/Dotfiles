@@ -6,8 +6,10 @@
 !/.bash_profile
 !/.bashrc
 
+
 !/.config/
 /.config/*
+
 !/.config/i3/
 /.config/i3/*
 
@@ -25,20 +27,18 @@
 !/.config/screen/screenrc
 !/.config/tmux/tmux.conf
 
-!/.vim/
-/.vim/*
-!/.vim/after/
-/.vim/after/*
-/.vim/after/ftplugin/
-!/.vim/after/ftplugin/*
 
-!/.vim/after/ftplugin/yaml.vim
+!/.config/vim/
+/.config/vim/*
+!/.config/vim/after/
+/.config/vim/after/*
+/.config/vim/after/ftplugin/
+!/.config/vim/after/ftplugin/*
+!/.config/vim/after/ftplugin/yaml.vim
+!/.config/vim/ftdetect/
+/.config/vim/ftdetect/*
+!/.config/vim/ftdetect/sls.vim
+!/.config/vim/vimrc
 
-!/.vim/ftdetect/
-/.vim/ftdetect/*
-
-!/.vim/ftdetect/sls.vim
-
-!/.vimrc
 !/LICENSE
 !/README.md

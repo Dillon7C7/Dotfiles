@@ -1,5 +1,8 @@
 """ BASIC SETUP:
 
+" use XDG Base Directory Specification for viminfo
+set viminfofile=$XDG_STATE_HOME/vim/viminfo
+
 " turn off vi-compatible mode and make vim more useful
 set nocompatible
 
